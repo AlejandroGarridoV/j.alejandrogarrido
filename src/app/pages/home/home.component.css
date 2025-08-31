@@ -245,26 +245,6 @@
   border-radius: 10px;
 }
 
-.pluma-hero {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0.8;
-  animation: flotar 3s ease-in-out infinite alternate;
-  z-index: 2;
-  filter: drop-shadow(0 0 5px rgba(242, 192, 102, 0.7));
-}
-
-@keyframes flotar {
-  0% {
-    transform: translateX(-50%) translateY(0);
-  }
-
-  100% {
-    transform: translateX(-50%) translateY(-15px);
-  }
-}
 
 /* Responsive */
 @media (max-width: 992px) {
