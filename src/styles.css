@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* Paleta de colores */
+  --negro-silueta: #0a0a0a;
+  --purpura-difuso: #4B3D5C;
+  --ambar-faroles: #F2C066;
+  --niebla-lunar: #F5F5F5;
+
+  /* Fuentes */
+  --font-primaria: 'Cinzel', serif;
+  --font-secundaria: 'Open Sans', sans-serif;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos globales */
+body {
+  font-family: var(--font-secundaria);
+  color: var(--negro-silueta);
+  background-color: var(--niebla-lunar);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primaria);
+  color: var(--purpura-difuso);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--purpura-difuso);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--ambar-faroles);
+}
+
+button, .button {
+  background-color: var(--purpura-difuso);
+  color: var(--niebla-lunar);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-primaria);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+button:hover, .button:hover {
+  background-color: var(--ambar-faroles);
+  color: var(--negro-silueta);
+}
+
+/* Importar fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');

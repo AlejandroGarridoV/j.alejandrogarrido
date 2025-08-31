@@ -1,0 +1,211 @@
+/* HEADER FANTASÍA OSCURA */
+.header-umbral {
+  position: relative;
+  background-color: var(--negro-silueta);
+  padding: 1rem 0 0;
+  box-shadow: 0 4px 30px rgba(75, 61, 92, 0.3);
+  z-index: 1000;
+}
+
+.sombra-caida {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(to bottom, rgba(75, 61, 92, 0.4), transparent);
+}
+
+.contenedor-header {
+  max-height: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-sello {
+  height: 60px;
+  width: auto;
+  filter: drop-shadow(0 0 5px rgba(242, 192, 102, 0.3));
+  transition: all 0.3s ease;
+}
+
+.logo-sello:hover {
+  transform: rotate(5deg);
+  filter: drop-shadow(0 0 8px rgba(242, 192, 102, 0.5));
+}
+
+.marca-autor {
+  display: flex;
+  flex-direction: column;
+}
+
+.nombre-autor {
+  font-family: var(--font-primaria);
+  color: var(--niebla-lunar);
+  font-size: 1.8rem;
+  line-height: 1;
+  letter-spacing: 1px;
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(75, 61, 92, 0.8);
+}
+
+.titulo-autor {
+  font-family: var(--font-secundaria);
+  color: var(--ambar-faroles);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.nav-principal {
+  display: block;
+}
+
+.menu-arcano {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.link-texto {
+  font-family: var(--font-primaria);
+  color: var(--niebla-lunar);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.link-sombra {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--ambar-faroles);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.nav-link:hover .link-texto {
+  color: var(--ambar-faroles);
+  text-shadow: 0 0 8px rgba(242, 192, 102, 0.5);
+}
+
+.nav-link:hover .link-sombra {
+  width: 100%;
+}
+
+.borde-ambar {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--ambar-faroles), transparent);
+  margin-top: 1rem;
+  opacity: 0.7;
+}
+
+/* Botón móvil (opcional) */
+.boton-movil {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.linea-menu {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--ambar-faroles);
+  transition: all 0.3s ease;
+}
+
+/* Efecto activo para el menú móvil */
+.boton-movil.activo .linea-menu:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.boton-movil.activo .linea-menu:nth-child(2) {
+  opacity: 0;
+}
+
+.boton-movil.activo .linea-menu:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .boton-movil {
+    display: flex;
+  }
+  
+  .nav-principal {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--negro-silueta);
+    padding: 6rem 2rem 2rem;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .nav-principal.activo {
+    right: 0;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+  }
+  
+  .menu-arcano {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .contenedor-header {
+    padding: 0 1.5rem;
+  }
+}
+
+/* Efecto especial para el header */
+.header-umbral::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M20,20 L80,20 L80,80 L20,80 Z" stroke="%234B3D5C" stroke-width="0.5" fill="none" opacity="0.3"/></svg>');
+  opacity: 0.1;
+  pointer-events: none;
+}

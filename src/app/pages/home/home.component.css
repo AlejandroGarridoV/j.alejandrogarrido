@@ -1,0 +1,316 @@
+/* ESTILOS HERO UMBRAL CON IMAGEN EN HTML */
+.hero-umbral {
+  position: relative;
+  padding: 6rem 2rem;
+  color: white;
+  overflow: hidden;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid var(--ambar-faroles);
+}
+
+.imagen-fondo-html {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.sombra-umbral {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 20%, rgba(25, 15, 35, 0.8) 0%, rgba(10, 5, 20, 0.95) 70%);
+  z-index: 1;
+}
+
+.sombra-degradado {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to top, rgba(10, 5, 20, 1) 0%, transparent 100%);
+  z-index: 1;
+}
+
+.contenedor-hero {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.contenido-texto {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.titulo-hero {
+  font-family: var(--font-primaria);
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+}
+
+.titulo-hero span {
+  color: var(--ambar-faroles);
+  position: relative;
+  display: inline-block;
+}
+
+.titulo-hero span::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ambar-faroles), transparent);
+}
+
+.subtitulo {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  max-width: 80%;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.linea-divisoria {
+  width: 700px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ambar-faroles), var(--purpura-difuso));
+  margin: 1.5rem 0;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.linea-divisoria::before,
+.linea-divisoria::after {
+  content: '✧';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ambar-faroles);
+  font-size: 1.5rem;
+  text-shadow: 0 0 8px var(--ambar-faroles);
+}
+
+.linea-divisoria::before {
+  left: -30px;
+}
+
+.linea-divisoria::after {
+  right: -30px;
+}
+
+.descripcion {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ESTILOS PARA LOS BOTONES */
+.contenedor-botones {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.boton-muestra {
+  background-color: transparent !important;
+  color: var(--ambar-faroles) !important;
+  border: 2px solid var(--ambar-faroles) !important;
+  box-shadow: 0 4px 15px rgba(242, 192, 102, 0.2) !important;
+}
+
+.boton-muestra:hover {
+  background-color: rgba(242, 192, 102, 0.1) !important;
+  color: white !important;
+  border-color: white !important;
+}
+
+.boton-hero {
+  display: inline-flex; /* Cambiamos a flex para mejor control */
+  align-items: center; 
+  justify-content: center; 
+  background-color: var(--ambar-faroles);
+  color: var(--negro-silueta);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-family: var(--font-primaria);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(242, 192, 102, 0.4);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  height: 50px; 
+  line-height: normal; 
+}
+
+.boton-hero:hover {
+  background-color: white;
+  color: var(--negro-silueta);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(242, 192, 102, 0.6);
+}
+
+.boton-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.5s;
+}
+
+.boton-hero:hover::before {
+  left: 100%;
+}
+
+.contenedor-portada {
+  flex: 1;
+  position: relative;
+  perspective: 1000px;
+  max-width: 400px;
+}
+
+.portada-destacada {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transform: rotateY(-10deg) rotateZ(2deg);
+  transition: transform 0.5s ease;
+  position: relative;
+  z-index: 2;
+  border: 3px solid var(--ambar-faroles);
+}
+
+.contenedor-portada:hover .portada-destacada {
+  transform: rotateY(-5deg) rotateZ(1deg) scale(1.03);
+}
+
+.sello-exclusivo {
+  position: absolute;
+  top: 0px;
+  right: -15px;
+  background-color: var(--ambar-faroles);
+  color: var(--negro-silueta);
+  padding: 0.5rem 2rem;
+  font-family: var(--font-primaria);
+  font-size: 1.1rem;
+  transform: rotate(15deg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  font-weight: bold;
+}
+
+.efecto-sombra {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: var(--ambar-faroles);
+  filter: blur(30px);
+  opacity: 0.3;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.pluma-hero {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.8;
+  animation: flotar 3s ease-in-out infinite alternate;
+  z-index: 2;
+  filter: drop-shadow(0 0 5px rgba(242, 192, 102, 0.7));
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-15px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-umbral {
+    min-height: auto;
+    padding: 4rem 2rem;
+  }
+
+  .contenedor-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .titulo-hero {
+    font-size: 3.5rem;
+  }
+
+  .subtitulo {
+    max-width: 100%;
+  }
+
+  .linea-divisoria {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .descripcion {
+    max-width: 100%;
+  }
+
+  .contenedor-portada {
+    margin-top: 3rem;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .titulo-hero {
+    font-size: 2.8rem;
+  }
+
+  .subtitulo {
+    font-size: 1.2rem;
+  }
+
+  .imagen-fondo-html {
+    object-position: 60% center;
+  }
+}

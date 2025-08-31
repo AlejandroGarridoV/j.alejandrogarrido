@@ -1,0 +1,275 @@
+/* FOOTER UMBRAL - FANTASÍA OSCURA */
+.footer-umbral {
+  position: relative;
+  background-color: var(--negro-silueta);
+  color: var(--niebla-lunar);
+  padding: 3rem 2rem 1.5rem;
+  font-family: var(--font-secundaria);
+  overflow: hidden;
+}
+
+.footer-umbral::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M20,50 Q50,20 80,50 Q50,80 20,50 Z" stroke="%234B3D5C" stroke-width="0.3" fill="none" opacity="0.2"/></svg>');
+  opacity: 0.1;
+}
+
+.sello-oculto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.simbolo-arcano {
+  width: 200px;
+  height: 200px;
+}
+
+.columnas-footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.columna {
+  padding: 0 1rem;
+}
+
+.titulo-columna {
+  font-family: var(--font-primaria);
+  color: var(--niebla-lunar);
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.titulo-columna span {
+  color: var(--ambar-faroles);
+}
+
+.titulo-columna::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ambar-faroles), transparent);
+}
+
+.lista-contacto {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-contacto li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.8rem;
+}
+
+.lista-contacto a, 
+.lista-contacto span {
+  color: var(--niebla-lunar);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.lista-contacto a:hover {
+  color: var(--ambar-faroles);
+}
+
+.lista-contacto svg {
+  opacity: 0.8;
+}
+
+.nav-footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-footer li {
+  margin-bottom: 0.8rem;
+}
+
+.nav-footer a {
+  color: var(--niebla-lunar);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.nav-footer a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--ambar-faroles);
+  transition: width 0.3s ease;
+}
+
+.nav-footer a:hover {
+  color: var(--ambar-faroles);
+  padding-left: 5px;
+}
+
+.nav-footer a:hover::before {
+  width: 15px;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.icono-red {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--purpura-difuso);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.icono-red:hover {
+  background-color: var(--purpura-difuso);
+  transform: translateY(-3px);
+}
+
+.icono-red svg {
+  transition: all 0.3s ease;
+}
+
+.icono-red:hover svg {
+  stroke: var(--niebla-lunar);
+}
+
+.suscribirse h4 {
+  font-family: var(--font-primaria);
+  color: var(--niebla-lunar);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.suscribirse h4 span {
+  color: var(--ambar-faroles);
+}
+
+.form-suscripcion {
+  display: flex;
+  position: relative;
+}
+
+.form-suscripcion input {
+  flex-grow: 1;
+  background-color: rgba(245, 245, 245, 0.1);
+  border: 1px solid var(--purpura-difuso);
+  padding: 0.8rem 1rem;
+  color: var(--niebla-lunar);
+  font-family: var(--font-secundaria);
+}
+
+.form-suscripcion input::placeholder {
+  color: rgba(245, 245, 245, 0.6);
+}
+
+.form-suscripcion input:focus {
+  outline: none;
+  border-color: var(--ambar-faroles);
+  box-shadow: 0 0 0 2px rgba(242, 192, 102, 0.3);
+}
+
+.form-suscripcion button {
+  background-color: var(--ambar-faroles);
+  border: none;
+  padding: 0 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-suscripcion button:hover {
+  background-color: var(--niebla-lunar);
+}
+
+.firma-final {
+  text-align: center;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.linea-divisoria {
+  width: 150px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--purpura-difuso), transparent);
+  margin: 0 auto 1.5rem;
+}
+
+.firma-final p {
+  color: var(--niebla-lunar);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.firma-final p span {
+  color: var(--ambar-faroles);
+}
+
+.leyenda-oculta {
+  opacity: 0.3;
+  font-size: 0.8rem;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* Efecto de año automático */
+#ano {
+  font-family: var(--font-primaria);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .columnas-footer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .columna {
+    text-align: center;
+  }
+  
+  .titulo-columna::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .lista-contacto {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .redes-sociales {
+    justify-content: center;
+  }
+}
