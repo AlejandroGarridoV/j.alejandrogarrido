@@ -294,3 +294,333 @@
     object-position: 60% center;
   }
 }
+
+/* ===== SECCIÓN PRÓXIMAMENTE - UNIFICADA CON HERO ===== */
+.proximamente-umbral {
+  position: relative;
+  padding: 6rem 2rem;
+  color: white;
+  overflow: hidden;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid var(--ambar-faroles); /* igual que hero */
+  /* sin border-top para que sea coherente */
+  background-color: var(--negro-silueta);
+}
+
+.fondo-proximo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+.sombra-proxima {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Mismo gradiente radial que el hero (cambiamos a 80% 20% para luz similar) */
+  background: radial-gradient(circle at 80% 20%, rgba(25, 15, 35, 0.8) 0%, rgba(10, 5, 20, 0.95) 70%);
+  z-index: 1;
+}
+
+.degradado-proximo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to top, rgba(10, 5, 20, 1) 0%, transparent 100%);
+  z-index: 1;
+}
+
+.contenedor-proximo {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+  /* Eliminamos fondo, backdrop, border-radius, padding extra para que se vea igual que hero */
+  background: none;
+  backdrop-filter: none;
+  border-radius: 0;
+  border: none;
+  padding: 0;
+}
+
+/* Portada (lado izquierdo) */
+.portada-proximo-wrapper {
+  flex: 1;
+  perspective: 1000px;
+  position: relative;
+  max-width: 400px; /* igual que hero */
+}
+
+.portada-proximo {
+  position: relative;
+  transform: rotateY(-10deg) rotateZ(2deg); /* misma rotación que hero */
+  transition: transform 0.5s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border: 3px solid var(--ambar-faroles);
+}
+
+.portada-proximo:hover {
+  transform: rotateY(-5deg) rotateZ(1deg) scale(1.03);
+}
+
+.portada-proximo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sello-fecha {
+  position: absolute;
+  top: 0px;
+  right: -15px;
+  background-color: var(--ambar-faroles);
+  color: var(--negro-silueta);
+  padding: 0.5rem 2rem;
+  font-family: var(--font-primaria);
+  font-size: 1.1rem;
+  transform: rotate(15deg); /* mismo ángulo que sello-exclusivo */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+.sombra-extra-portada {
+  position: absolute;
+  bottom: -15px;
+  left: 10%;
+  width: 80%;
+  height: 30px;
+  background: var(--ambar-faroles);
+  filter: blur(20px);
+  opacity: 0.4;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+/* Información (lado derecho) */
+.info-proximo {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.pre-titulo-proximo {
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  color: var(--ambar-faroles);
+  text-transform: uppercase;
+  font-weight: 500;
+  background: rgba(242, 192, 102, 0.15);
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+}
+
+/* Reutilizamos .titulo-hero y .subtitulo ya existentes */
+.titulo-hero {
+  font-family: var(--font-primaria);
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+}
+.titulo-hero span {
+  color: var(--ambar-faroles);
+  position: relative;
+  display: inline-block;
+}
+.titulo-hero span::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ambar-faroles), transparent);
+}
+
+.subtitulo {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  max-width: 80%;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* La línea divisoria es la misma que en hero */
+.linea-divisoria {
+  width: 700px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ambar-faroles), var(--purpura-difuso));
+  margin: 1.5rem 0;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.linea-divisoria::before,
+.linea-divisoria::after {
+  content: '✧';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ambar-faroles);
+  font-size: 1.5rem;
+  text-shadow: 0 0 8px var(--ambar-faroles);
+}
+.linea-divisoria::before {
+  left: -30px;
+}
+.linea-divisoria::after {
+  right: -30px;
+}
+
+.descripcion {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Botones unificados */
+.contenedor-botones {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.boton-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ambar-faroles);
+  color: var(--negro-silueta);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-family: var(--font-primaria);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(242, 192, 102, 0.4);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  line-height: normal;
+  gap: 8px;
+}
+.boton-hero:hover {
+  background-color: white;
+  color: var(--negro-silueta);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(242, 192, 102, 0.6);
+}
+.boton-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.5s;
+}
+.boton-hero:hover::before {
+  left: 100%;
+}
+.boton-muestra {
+  background-color: transparent !important;
+  color: var(--ambar-faroles) !important;
+  border: 2px solid var(--ambar-faroles) !important;
+  box-shadow: 0 4px 15px rgba(242, 192, 102, 0.2) !important;
+}
+.boton-muestra:hover {
+  background-color: rgba(242, 192, 102, 0.1) !important;
+  color: white !important;
+  border-color: white !important;
+}
+
+.contador-meses {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 0.6rem 1.2rem;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  color: #ddd;
+  border-left: 2px solid var(--ambar-faroles);
+}
+
+/* Responsive (igual que hero) */
+@media (max-width: 992px) {
+  .proximamente-umbral {
+    padding: 4rem 2rem;
+  }
+  .contenedor-proximo {
+    flex-direction: column;
+    text-align: center;
+  }
+  .titulo-hero {
+    font-size: 3.5rem;
+  }
+  .subtitulo {
+    max-width: 100%;
+  }
+  .linea-divisoria {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .descripcion {
+    max-width: 100%;
+  }
+  .portada-proximo-wrapper {
+    margin-top: 2rem;
+    max-width: 300px;
+  }
+  .contador-meses {
+    justify-content: center;
+  }
+  .pre-titulo-proximo {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .titulo-hero {
+    font-size: 2.8rem;
+  }
+  .subtitulo {
+    font-size: 1.2rem;
+  }
+  .fondo-proximo {
+    object-position: 60% center;
+  }
+}

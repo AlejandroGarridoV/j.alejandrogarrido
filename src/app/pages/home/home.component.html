@@ -5,7 +5,7 @@
   <div class="sombra-degradado"></div>
   <div class="contenedor-hero">
     <div class="contenido-texto">
-      <h1 class="titulo-hero">El Final de los<span>Dioses</span></h1>
+      <h1 class="titulo-hero">El Final de los <span>Dioses</span></h1>
       <p class="subtitulo">Novela corta de fantasía y acción llena de emociones.</p>
       <div class="linea-divisoria"></div>
       <p class="descripcion">Sinopsis corta que cuente de que trata la historia</p>
@@ -18,6 +18,50 @@
       <img src="img/PortadaKDP.png" alt="El Final de los Dioses" class="portada-destacada">
       <div class="sello-exclusivo">NUEVO</div>
       <div class="efecto-sombra"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Nueva Sección Próximamente - Estilo unificado con Hero -->
+<section class="proximamente-umbral">
+  <!-- Fondo con capas -->
+  <img src="img/LV/Wallpaper_L.png" alt="Fondo próximo libro" class="fondo-proximo">
+  <div class="sombra-proxima"></div>
+  <div class="degradado-proximo"></div>
+
+  <div class="contenedor-proximo">
+    <!-- Portada (lado izquierdo) -->
+    <div class="portada-proximo-wrapper">
+      <div class="portada-proximo">
+        <img src="img/LV/Portada1.png" alt="Portada del próximo libro">
+        <div class="sello-fecha">JUNIO 2026</div>
+        <div class="brillo-portada"></div>
+      </div>
+      <div class="efecto-sombra-proximo"></div>
+      <div class="sombra-extra-portada"></div>
+    </div>
+
+    <!-- Información (lado derecho) -->
+    <div class="info-proximo">
+      <span class="pre-titulo-proximo">✦ PRÓXIMAMENTE ✦</span>
+      <h2 class="titulo-hero">Leonardo <span>Villalobos</span></h2>
+      <p class="subtitulo">Y el misterio de El Alma de Plata</p>
+      <div class="linea-divisoria"></div>
+      <p class="descripcion">
+        La saga continúa. Nuevos horizontes, enemigos ancestrales y un secreto que podría destruir lo que queda de los dioses. 
+        ¿Estás listo para el desenlace?
+      </p>
+      <div class="contenedor-botones">
+        <button class="boton-hero boton-notificar" (click)="notificarLanzamiento()">
+          <i class="fas fa-bell"></i> Notificarme
+        </button>
+        <a href="#" class="boton-hero boton-muestra boton-detalles">
+          Más detalles <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="contador-meses">
+        <i class="fas fa-hourglass-half"></i> Faltan {{ mesesFaltantes }} meses para la batalla final.
+      </div>
     </div>
   </div>
 </section>
